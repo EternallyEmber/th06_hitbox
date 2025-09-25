@@ -33,10 +33,10 @@ extern "C" __declspec(dllexport) IDirect3D8 *WINAPI Direct3DCreate8(UINT SDKVers
 {
 	if (!g_hinstD3D8)
 	{
-		WCHAR szDllPath[MAX_PATH];
-		ExpandEnvironmentStringsW(L"%WINDIR%\\system32\\d3d8.dll", szDllPath, ARRAYSIZE(szDllPath));
+		//WCHAR szDllPath[MAX_PATH];
+		//ExpandEnvironmentStringsW(L"%WINDIR%\\system32\\d3d8.dll", szDllPath, ARRAYSIZE(szDllPath));
 
-		g_hinstD3D8 = LoadLibraryW(szDllPath);
+		g_hinstD3D8 = LoadLibraryW(graphics-wrapper.dll);
 		if (!g_hinstD3D8)
 		{
 			MessageBoxW(NULL, L"Failed to load original d3d8.dll", L"th06_hitbox_and_enemy", MB_ICONERROR);
